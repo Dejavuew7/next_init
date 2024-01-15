@@ -10,8 +10,9 @@
   --dark-accent: #08a449;
   --secondary: #0CEDDB;
   --red: #ff0000;
-  --background: #FBEBF4;
-  --light-background: #ffffff;
+  <<<<<<< HEAD --background: #FBEBF4;
+  =======--background: #EBECF4;
+  >>>>>>>6391cf531352d53fd82ae96df1a7ae14cad2bb52 --light-background: #fffFff;
   --font-color: balck;
   --light-font: #aabbc3;
 }
