@@ -37,8 +37,6 @@ exports.Login = (req, res) => {
     if (data) {
       console.log(data);
       if (data.password == req.body.password) {
-        console.log("Done Login");
-
         res.send({ Success: "Success!" });
       } else {
         res.send({ Success: "Wrong password!" });
