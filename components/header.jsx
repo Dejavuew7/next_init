@@ -13,14 +13,14 @@ export default function Header({ username }) {
                         <div className="flex-col justify-center items-center gap-4 flex">
                             <div className="justify-center items-center gap-1.5 inline-flex">
                                 <div className="w-5 h-5 relative bg-[url('/img/hire.svg')]"></div>
-                                <button className="text-blue-950 text-xl font-normal font-['Rubik']">Hire</button>
+                                <button className="text-blue-950 text-xl font-normal font-['Rubik']">Hires</button>
                             </div>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
                         <div className="justify-center items-center gap-1.5 inline-flex">
                             <div className="w-5 h-5 relative bg-[url('/img/lead.svg')]"></div>
-                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Lead</button>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Leads</button>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
@@ -29,13 +29,13 @@ export default function Header({ username }) {
                                 <div className="w-[13.33px] h-[15px] relative">
                                 </div>
                             </div>
-                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Train</button>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Trains</button>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
                         <div className="justify-center items-center gap-1.5 inline-flex">
                             <div className="w-5 h-5 relative bg-[url('/img/community.svg')]"></div>
-                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Community</button>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Communitys</button>
                         </div>
                     </div>
                 </div>
