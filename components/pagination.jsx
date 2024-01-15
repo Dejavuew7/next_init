@@ -3,6 +3,7 @@ import styles from '../styles/Job.module.css'
 export default function
 
     Pagination({ total, pageNum, setPageNum }) {
+    console.log("-----------")
     const data = [];
     for (let index = 1; index <= total / 5 + 1; index++) {
         data.push(index);
