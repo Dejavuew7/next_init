@@ -1,81 +1,58 @@
-import { Button, Divider, Space, notification } from 'antd';
-import {
-    RadiusBottomleftOutlined,
-    RadiusBottomrightOutlined,
-    RadiusUpleftOutlined,
-    RadiusUprightOutlined,
-} from '@ant-design/icons';
-import { useState } from "react";
+import Layout from '../components/layout'
+import Image from 'next/image';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Image from 'next/image';
 import logo from "../components/Logo.svg";
 import Input from './components/input';
 import { IoSearch, IoEyeOutline } from "react-icons/io5"
-import axios from "axios";
-import { SmileOutlined } from '@ant-design/icons';
-import { validEmail } from './utils/valid-email';
-export default function SignupPage({ username }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [isLoading, setIsLoading] = useState(false)
-    const [api, contextHolder] = notification.useNotification();
+import axios from 'axios';
+export default function LoginPage({ username }) {
     const router = useRouter()
-    const { msg } = router.query
-
+    const { msg } = router.query;
     const handleSignUp = () => {
+        console.log(document.forms["signin"]['mail'].value, document.forms["signin"]['password'].value)
         axios
-            .post("http://localhost:5000/api/auth/register", { email: document.forms["signup"]['mail'].value, password: document.forms["signup"]['password'].value })
+            .post("http://localhost:5000/api/auth/login", { email: document.forms["signin"]['mail'].value, password: document.forms["signin"]['password'].value })
             .then((res) => {
-                console.log(res)
-                if (res.data == 'Success') {
-                    console.log("Success")
-                    api['error']({
-                        message: 'Warning',
-                        description:
-                            'User already exist..',
-                        icon: <SmileOutlined style={{ color: '#108ee9' }} />,
-                    });
-                    router.push("/")
+                console.log(res.data);
+                if (res.data.Success == 'Success') {
+                    router.push("/jobPost")
                 }
             })
             .catch((error) => {
                 console.log(error);
             });
+
     }
-
-
     return (
 
         <div class="h-screen w-full w-[1923px] bg-slate-200 justify-center items-center inline-flex ">
-
-            <form name='signup'>
+            <form name='signin'>
                 <div class="w-[721px] h-[557px] p-6 bg-white rounded-2xl shadow justify-start items-start gap-6 inline-flex">
-                    <img class="w-[246px] self-stretch rounded-lg" src="/siginup_side.png" />
+                    <img class="w-[246px] self-stretch rounded-lg" src="/login_side.png" />
                     <div class="grow shrink basis-0 self-stretch pt-6 flex-col justify-start items-center gap-6 inline-flex">
                         <div class="w-[258px] h-7 justify-center items-center inline-flex">
                             {/* <img class="w-[258px] h-7 relative" src="/Logo.png" /> */}
                             <Image class="w-[258px] h-7 relative" src={logo} />
                         </div>
                         <div class="flex-col justify-start items-center gap-1 flex">
-                            <div class="w-[145px] text-sky-700 text-base font-semibold font-['Rubik']">Create an account</div>
-                            <div class="text-zinc-400 text-[10px] font-normal font-['Rubik']">Create a new account</div>
+                            <div class="text-sky-700 text-base font-semibold font-['Rubik']">Welcome to back</div>
+                            <div class="text-zinc-400 text-[10px] font-normal font-['Rubik']">Sign in to continue</div>
                         </div>
                         <div class="self-stretch h-[136px] flex-col justify-start items-center gap-[18px] flex">
                             <div class="self-stretch h-[59px] flex-col justify-start items-start gap-2.5 flex">
                                 <Input type='email' PrefixIcon={<IoSearch />} placeholder='Please Input here.' label='Email Address' name='mail' />
                             </div>
                             <div class="self-stretch h-[59px] flex-col justify-start items-start gap-2.5 flex">
-                                <Input type='password' backIcon={<IoEyeOutline />} placeholder='Please Input here.' label='User Password' name='password' />
+
+                                <Input backIcon={<IoEyeOutline />} placeholder='Please Input here.' label='User Password' name='password' />
                             </div>
-
                         </div>
-
-                        <button type='button' onClick={handleSignUp} class="border-none bg-[#312e81] rounded-lg flex self-stretch justify-center items-center px-6 py-2  text-slate-200 text-sm font-normal font-['Rubik'] capitalize" >Sign Up</button>
+                        <button type='button' onClick={handleSignUp} class="border-none bg-[#312e81] rounded-lg flex self-stretch justify-center items-center px-6 py-2  text-slate-200 text-sm font-normal font-['Rubik'] capitalize" >Login</button>
                         {/* <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-                            <button type='button' onClick={handleSignUp} disabled={isLoading} class="grow shrink basis-0 h-8 px-6 py-2 bg-indigo-900 rounded-lg justify-center items-center gap-2.5 flex">
-                                <div class="text-slate-200 text-sm font-normal font-['Rubik'] capitalize">Sign Up</div>
+                            <button onClick={handleSignUp} class="grow shrink basis-0 h-8 px-6 py-2 bg-indigo-900 rounded-lg justify-center items-center gap-2.5 flex">
+                                <div class="text-slate-200 text-sm font-normal font-['Rubik'] capitalize">Login</div>
                             </button>
                         </div> */}
                         <div class="self-stretch justify-start items-center gap-3 inline-flex">
@@ -94,9 +71,10 @@ export default function SignupPage({ username }) {
                             </button>
                         </div>
                         <div class="justify-center items-start gap-1 inline-flex">
-                            <div class="text-neutral-600 text-sm font-normal font-['Rubik']">Already have an account?</div>
+                            <div class="text-neutral-600 text-sm font-normal font-['Rubik']">Don’t have an account?</div>
                             <div class="justify-center items-center gap-2.5 flex">
-                                <Link class="text-blue-500 text-sm font-medium font-['Rubik'] underline" href="/">Log in</Link>
+                                <Link class="text-blue-500 text-sm font-medium font-['Rubik'] underline" href="/signup">Sign up</Link>
+                                {/* <div class="text-blue-500 text-sm font-medium font-['Rubik'] underline">Sign up</div> */}
                             </div>
                         </div>
                     </div>
