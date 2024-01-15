@@ -5,14 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0ced6a;
-  --light-accent: #68d696;
+  --primary: #0cdd6a;
+  --light-accent: #68d686;
   --dark-accent: #08a449;
   --secondary: #0CEDDB;
   --red: #ff0000;
   --background: #EBEBF4;
   --light-background: #ffffff;
-  --font-color: white;
+  --font-color: balck;
   --light-font: #aabbc3;
 }
 
