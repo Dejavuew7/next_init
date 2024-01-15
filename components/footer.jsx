@@ -1,11 +1,11 @@
 export default function Footer({ username }) {
     return (
-        <div className=" w-[1859px] h-[253px] px-8 py-12 bg-slate-200 rounded-2xl flex-col justify-start items-center  inline-flex">
+        <div className=" w-[1923px] h-[253px] px-8 py-12 bg-slate-300 flex-col justify-start items-center inline-flex px-[250px]">
             <div className="self-stretch h-[157px] flex-col justify-start items-start gap-8 flex">
                 <div className="self-stretch justify-start items-start gap-8 inline-flex">
                     <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[231px] h-[29px] justify-center items-center inline-flex">
-                            <div className="w-[231px] h-[29px] relative">
+                            <div className="w-[231px] h-[29px] relative bg-[url('/img/Logo.svg')]">
                             </div>
                         </div>
                         <div className="self-stretch grow shrink basis-0 text-blue-950 text-sm font-normal font-['Rubik']">Lorem ipsum dolor sit amet consectetur. Lectus facilisi id bibendum quis consectetur egestas. </div>

@@ -1,3 +1,5 @@
+import { Button, Input, Switch, Form } from "antd";
+import { CiSearch } from "react-icons/ci";
 export default function Header({ username }) {
     return (
         <div className="w-[1923px] h-[69px] px-64 py-3.5 bg-white justify-center items-center gap-8 inline-flex">
@@ -11,14 +13,14 @@ export default function Header({ username }) {
                         <div className="flex-col justify-center items-center gap-4 flex">
                             <div className="justify-center items-center gap-1.5 inline-flex">
                                 <div className="w-5 h-5 relative bg-[url('/img/hire.svg')]"></div>
-                                <div className="text-blue-950 text-xl font-normal font-['Rubik']">Hire</div>
+                                <button className="text-blue-950 text-xl font-normal font-['Rubik']">Hire</button>
                             </div>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
                         <div className="justify-center items-center gap-1.5 inline-flex">
                             <div className="w-5 h-5 relative bg-[url('/img/lead.svg')]"></div>
-                            <div className="text-neutral-600 text-xl font-normal font-['Rubik']">Lead</div>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Lead</button>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
@@ -27,19 +29,23 @@ export default function Header({ username }) {
                                 <div className="w-[13.33px] h-[15px] relative">
                                 </div>
                             </div>
-                            <div className="text-neutral-600 text-xl font-normal font-['Rubik']">Train</div>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Train</button>
                         </div>
                     </div>
                     <div className="flex-col justify-center items-center gap-1 inline-flex">
                         <div className="justify-center items-center gap-1.5 inline-flex">
                             <div className="w-5 h-5 relative bg-[url('/img/community.svg')]"></div>
-                            <div className="text-neutral-600 text-xl font-normal font-['Rubik']">Community</div>
+                            <button className="text-neutral-600 text-xl font-normal font-['Rubik']">Community</button>
                         </div>
                     </div>
                 </div>
-                <div className="w-[217px] h-9 px-4 py-2 bg-slate-200 rounded-2xl justify-start items-center gap-2.5 flex">
-                    <label className="w-5 h-5 relative bg-[url('/img/search.svg')]"></label>
-                    <input placeholder="Search" className="text-black text-sm font-normal bg-slate-50 font-['Rubik'] pl-[5px]" />
+                <div >
+                    <Input
+                        className="text-zinc-400  text-sm font-normal font-sans bg-slate-200 w-[217px] h-9 px-4 py-2 rounded-2xl justify-start items-center "
+                        prefix={<CiSearch className="text-zinc-400" />}
+                        placeholder="Search"
+                    ></Input>
+
                 </div>
                 <div className="w-6 h-6 relative"></div>
                 <div className="justify-start items-center gap-3 flex">
